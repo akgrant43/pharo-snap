@@ -1,0 +1,36 @@
+name: pharo
+version: 0.10
+summary: Pharo Smalltalk
+description: Pharo Smalltalk snapped with vmLatest60
+grade: devel
+confinement: devmode
+
+apps:
+  pharo:
+    command: usr/bin/pharo
+    plugs: [home, unity7, opengl, network, x11]
+  ui:
+    command: usr/bin/pharo-ui
+    plugs: [home, unity7, opengl, network, x11]
+  check:
+    command: usr/bin/akgcheck
+
+parts:
+  build:
+    source: ./
+    plugin: make
+    build-packages:
+      - curl
+      - unzip
+    stage-packages:
+        - gcc-multilib
+        - libx11-6:i386
+        - libgl1-mesa-glx:i386
+        - libfontconfig1:i386
+        - libssl1.0.0:i386
+        - libcairo2-dev:i386
+        - libc6-i386
+        - libexpat1:i386
+        - sqlite3
+        - libsqlite3-dev:i386
+        - git
