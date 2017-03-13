@@ -1,7 +1,7 @@
 name: pharo
-version: 0.10
+version: 0.9.2
 summary: Pharo Smalltalk
-description: Pharo Smalltalk snapped with vmLatest60
+description: Pharo 6 Smalltalk snapped.
 grade: devel
 confinement: devmode
 
@@ -12,6 +12,9 @@ apps:
   ui:
     command: usr/bin/pharo-ui
     plugs: [home, unity7, opengl, network, x11]
+  sqlite3:
+    command: usr/bin/sqlite3
+    plugs: [home]
 
 parts:
   build:
