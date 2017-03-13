@@ -6,5 +6,4 @@ install:
 	cp -a pharo-ui $(DESTDIR)/usr/bin/
 	cp -a pharo $(DESTDIR)/usr/bin/
 	cp -a pharo-vm $(DESTDIR)/usr/bin/
-	cp -a akgcheck $(DESTDIR)/usr/bin/
 

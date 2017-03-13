@@ -12,8 +12,6 @@ apps:
   ui:
     command: usr/bin/pharo-ui
     plugs: [home, unity7, opengl, network, x11]
-  check:
-    command: usr/bin/akgcheck
 
 parts:
   build:
