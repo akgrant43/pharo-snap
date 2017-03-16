@@ -1,5 +1,5 @@
 name: pharo
-version: 1.0.0
+version: 1.0.1
 summary: Pharo 6 Smalltalk
 description: |
     This package contains the 6.0 stable VM and image.
@@ -54,3 +54,5 @@ parts:
         - sqlite3
         - libsqlite3-dev:i386
         - git
+        - locales-all
+
