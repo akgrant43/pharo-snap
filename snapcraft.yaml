@@ -1,7 +1,14 @@
 name: pharo
-version: 0.9.2
-summary: Pharo Smalltalk
-description: Pharo 6 Smalltalk snapped.
+version: 1.0.0
+summary: Pharo 6 Smalltalk
+description: |
+    This package contains the 6.0 stable VM and image.
+    
+    Available commands:
+        pharo runs the vm in headless mode.
+        pharo.ui runs the vm with display.
+        pharo.newvm copies the image and changes file to the working directory.
+        pharo.sqlite3 runs the sqlite3 command line utility.
 grade: devel
 confinement: devmode
 
@@ -15,14 +22,24 @@ apps:
   sqlite3:
     command: usr/bin/sqlite3
     plugs: [home]
+  newvm:
+    command: usr/bin/newvm
+    plugs: [home]
+
 
 parts:
-  build:
+  pharo:
     source: ./
     plugin: make
+
+  xdg-open:
+    plugin: autotools
+    source: https://github.com/snapcore/snapd-xdg-open.git
+    source-type: git
     build-packages:
       - curl
       - unzip
+      - libglib2.0-dev
     stage-packages:
         - gcc-multilib
         - libx11-6:i386
@@ -32,6 +49,8 @@ parts:
         - libcairo2-dev:i386
         - libc6-i386
         - libexpat1:i386
+        - libgnome2-bin
+        - xdg-utils
         - sqlite3
         - libsqlite3-dev:i386
         - git

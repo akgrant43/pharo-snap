@@ -1,17 +1,21 @@
 # pharo-snap
 
-This builds a snapcraft package of the Pharo 6.0 Smalltalk VM.
-
-Currently the latest (unstable) V6.0 VM is packaged.
+This builds a snapcraft package of the Pharo 6.0 Smalltalk VM using the latest stable V6.0 build.
 
 SQLite3 libraries are included.
 
-These notes assume that you are already familiar with Pharo.  If not, please see the website at http://pharo.org/
+These notes assume that you are already familiar with Pharo.  If not, please visit the website at http://pharo.org/
 
 
-## Important
+## Compatibility
 
-If you need to use Cairo, please ensure that Issue 19833 is included, otherwise the library will fail to load. (https://pharo.fogbugz.com/f/cases/19833/CairoLibrary-unix-module-location-assumptions-too-restrictive)
+Pharo image 60442 or later is required for Cairo support.
+
+Opening URL's in a browser on the host requires snapd-xdg-open to be installed on the host.  On Ubuntu based systems:
+
+```bash
+$ sudo apt-get install snapd-xdg-open
+```
 
 
 ## Building the package
@@ -57,5 +61,6 @@ The snap package provides the following commands:
 
 * pharo - Run the image in headless mode
 * pharo.ui - Run the image (with UI)
+* pharo.newvm - Copy the clean Pharo image and changes file to the working directory.
 * pharo.sqlite3 - Run the sqlite3 command line utility
 
