@@ -1,0 +1,5 @@
+#!/bin/bash
+# Download the latest image and changes file to the users working directory
+
+curl get.pharo.org/60 | bash
+

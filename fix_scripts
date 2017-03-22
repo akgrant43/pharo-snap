@@ -1,0 +1,11 @@
+#!/bin/sh
+
+sed -i '/run the VM/i \
+export LD_LIBRARY_PATH="\$SNAP/lib/i386-linux-gnu:\$SNAP/usr/lib/i386-linux-gnu:$SNAP/usr/bin/pharo-vm:\$LD_LIBRARY_PATH" \
+export PATH="$PATH:/usr/local/bin"' \
+		pharo
+sed -i '/run the VM/i \
+export LD_LIBRARY_PATH="\$SNAP/lib/i386-linux-gnu:\$SNAP/usr/lib/i386-linux-gnu:$SNAP/usr/bin/pharo-vm:\$LD_LIBRARY_PATH" \
+export PATH="$PATH:/usr/local/bin"' \
+		pharo-ui
+sed -i 's/sudo //g' CONFIG

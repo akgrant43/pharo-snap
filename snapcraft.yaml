@@ -1,14 +1,29 @@
 name: pharo
-version: 1.0.1
+version: 1.1.1
 summary: Pharo 6 Smalltalk
 description: |
-    This package contains the 6.0 stable VM and image.
+    This package contains the 6.0 stable threaded VM and image.
+    
+    Installation:
+        $ sudo snap install pharo --dangerous --devmode
     
     Available commands:
         pharo runs the vm in headless mode.
         pharo.ui runs the vm with display.
-        pharo.newvm copies the image and changes file to the working directory.
+        pharo.cleanvm copies the image and changes file to the working directory.
+        pharo.getvm copies the latest 6.0 VM from http://get.pharo.org
         pharo.sqlite3 runs the sqlite3 command line utility.
+        pharo.config configures system thread priority, see below.
+    System Configuration:
+        This Pharo VM uses a threaded heartbeat that requires elevated priority.
+        Permission is granted by creating /etc/security/limits.d/pharo.conf
+        with the appropriate contents.  Running pharo.config will create or
+        overwrite the configuration file.  This command must be run as root:
+        $ sudo pharo.config
+        This command only needs to be run once, and you must log out and 
+        back in for the changes to take effect.
+    Web Site:
+        https://github.com/akgrant43/pharo-snap
 grade: devel
 confinement: devmode
 
@@ -22,8 +37,14 @@ apps:
   sqlite3:
     command: usr/bin/sqlite3
     plugs: [home]
-  newvm:
-    command: usr/bin/newvm
+  cleanvm:
+    command: usr/bin/cleanvm
+    plugs: [home]
+  getvm:
+    command: usr/bin/getvm
+    plugs: [home]
+  config:
+    command: usr/bin/CONFIG
     plugs: [home]
 
 
@@ -50,7 +71,6 @@ parts:
         - libc6-i386
         - libexpat1:i386
         - libgnome2-bin
-        - xdg-utils
         - sqlite3
         - libsqlite3-dev:i386
         - git
