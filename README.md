@@ -1,6 +1,6 @@
 # pharo-snap
 
-This builds a snapcraft package of the Pharo 6.0 Smalltalk VM using the latest stable V6.0 build.
+This builds a snapcraft package of the Pharo 6.0 Smalltalk threaded VM using the latest stable V6.0 build.
 
 SQLite3 libraries are included.
 
@@ -36,7 +36,7 @@ Clone this repository and cd to the root directory (snapcraft.yaml is in this di
 Build the package:
 
 ```bash
-$ snapcraft
+$ snapcraft clean; snapcraft
 ```
 
 The output will be a file named pharo_(version)_amd64.snap.
@@ -61,6 +61,20 @@ The snap package provides the following commands:
 
 * pharo - Run the image in headless mode
 * pharo.ui - Run the image (with UI)
-* pharo.newvm - Copy the clean Pharo image and changes file to the working directory.
+* pharo.cleanvm - Copy the clean Pharo image and changes file to the working directory, i.e. the version current when this package was built.
+* pharo.getvm - copies the latest 6.0 VM from http://get.pharo.org
 * pharo.sqlite3 - Run the sqlite3 command line utility
+* pharo.config - configures system thread priority, see below.
 
+This Pharo VM uses a threaded heartbeat that requires elevated priority.
+Permission is granted by creating /etc/security/limits.d/pharo.conf
+with the appropriate contents.  Running pharo.config will create or
+overwrite the configuration file.  This command must be run as root:
+
+```bash
+sudo pharo.config
+```
+
+This command only needs to be run once, and you must log out and 
+back in for the changes to take effect.
+ 
