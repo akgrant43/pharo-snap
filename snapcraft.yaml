@@ -1,8 +1,9 @@
 name: pharo
-version: 1.1.2
+version: 1.2.1
 summary: Pharo 6 Smalltalk
 description: |
     This package contains the 6.0 stable threaded VM and image.
+    Locally built vm.
     
     Installation:
         $ sudo snap install pharo --dangerous --devmode
@@ -60,21 +61,48 @@ parts:
     source: https://github.com/snapcore/snapd-xdg-open.git
     source-type: git
     build-packages:
+      - libglib2.0-dev
+      - cmake
+      - openssh-server
+      - libtool
+      - automake
+      - autoconf
+      - build-essential
+      - ack-grep
+      - zip
+      - bash-completion
+      - ruby
+      - xz-utils
+      - debhelper
+      - devscripts
+      - gcc-multilib
+      - g++
+    stage-packages:
+      - gcc-multilib
+      - libx11-6:i386
+      - libgl1-mesa-glx:i386
+      - libfontconfig1:i386
+      - libssl1.0.0:i386
+      - libcairo2-dev:i386
+      - libc6-i386
+      - libexpat1:i386
+      - libgnome2-bin
+      - libasound2:i386
+      - libasound2-dev:i386
+      - libasound2-plugins:i386
+      - libssl-dev:i386
+      - libfreetype6-dev:i386
+      - libsm-dev:i386
+      - libice-dev:i386
+      - libgl1-mesa-dev:i386
+      - libxext-dev:i386
+      - libglapi-mesa:i386
+      - uuid-dev:i386
+      - sqlite3
+      - libsqlite3-dev:i386
+      - git
+      - vim
       - curl
       - unzip
-      - libglib2.0-dev
-    stage-packages:
-        - gcc-multilib
-        - libx11-6:i386
-        - libgl1-mesa-glx:i386
-        - libfontconfig1:i386
-        - libssl1.0.0:i386
-        - libcairo2-dev:i386
-        - libc6-i386
-        - libexpat1:i386
-        - libgnome2-bin
-        - sqlite3
-        - libsqlite3-dev:i386
-        - git
-        - locales-all
+      - locales-all
 

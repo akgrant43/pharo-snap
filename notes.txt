@@ -1,0 +1,15 @@
+27 Mar 2017
+===========
+
+"Your VM is too old for this image"
+
+See:
+
+- DiskStore class>>checkVMVersion  
+
+All comes back to the information reported in --version being missing, i.e. VM, Date, Plugins.
+
+
+Notes:
+
+- Go back to Pierce's email and ensure libraries are part of setup-ubuntu.sh.
