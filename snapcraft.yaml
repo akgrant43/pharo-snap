@@ -77,6 +77,9 @@ parts:
       - devscripts
       - gcc-multilib
       - g++
+      - uuid-dev:i386
+      - libssl1.0.0:i386
+      - libssl-dev:i386
     stage-packages:
       - gcc-multilib
       - libx11-6:i386
