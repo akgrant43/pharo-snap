@@ -1,5 +1,5 @@
 name: pharo
-version: 1.2.1
+version: 1.2.3
 summary: Pharo 6 Smalltalk
 description: |
     This package contains the 6.0 stable threaded VM and image.
@@ -30,10 +30,10 @@ confinement: devmode
 
 apps:
   pharo:
-    command: desktop-launch $SNAP/usr/bin/pharo
+    command: bin/desktop-launch $SNAP/usr/bin/pharo
     plugs: [home, unity7, opengl, network, x11]
   ui:
-    command: desktop-launch $SNAP/usr/bin/pharo-ui
+    command: bin/desktop-launch $SNAP/usr/bin/pharo-ui
     plugs: [home, unity7, opengl, network, x11]
   sqlite3:
     command: usr/bin/sqlite3
@@ -82,6 +82,7 @@ parts:
       - libssl-dev:i386
     stage-packages:
       - gcc-multilib
+      - libc-bin:i386
       - libx11-6:i386
       - libgl1-mesa-glx:i386
       - libfontconfig1:i386

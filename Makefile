@@ -3,7 +3,6 @@ all:
 	./fix_scripts
 
 install:
-	env
 	mkdir -p $(DESTDIR)/usr/bin/
 	cp -a pharo-ui $(DESTDIR)/usr/bin/
 	cp -a pharo $(DESTDIR)/usr/bin/
