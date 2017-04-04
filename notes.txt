@@ -1,0 +1,30 @@
+Current versions
+================
+
+pharo_1.2.3_amd64.snap : 2 Apr 2017, strict, experimental to try and force classic
+pharo_1.2.2_amd64.snap : 29 Mar 2017, devmode, locally built vm from akgrant43
+pharo_1.1.3_amd64.snap : 27 Mar 2017, devmode, vm from get.pharo.org
+pharo_1.2.1_amd64.snap : 29 Mar 2017, devmode, locally built vm
+
+
+29 Mar 2017
+===========
+
+VM version information mentioned on 27 Mar 2017 is created with newly added script genVersion.sh.
+
+
+27 Mar 2017
+===========
+
+"Your VM is too old for this image"
+
+See:
+
+- DiskStore class>>checkVMVersion  
+
+All comes back to the information reported in --version being missing, i.e. VM, Date, Plugins.
+
+
+Notes:
+
+- Go back to Pierce's email and ensure libraries are part of setup-ubuntu.sh.

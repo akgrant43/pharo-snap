@@ -1,0 +1,4 @@
+cat <<END | sudo tee /etc/security/limits.d/pharo.conf
+*       hard    rtprio  2
+*       soft    rtprio  2
+END
