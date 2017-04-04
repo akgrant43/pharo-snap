@@ -1,5 +1,5 @@
 all:
-	./try-build.sh > build.log 2>&1
+	./vm-build.sh > build.log 2>&1
 	./fix_scripts
 
 install:
