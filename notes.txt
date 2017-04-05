@@ -6,6 +6,13 @@ pharo_1.2.2_amd64.snap : 29 Mar 2017, devmode, locally built vm from akgrant43
 pharo_1.1.3_amd64.snap : 27 Mar 2017, devmode, vm from get.pharo.org
 pharo_1.2.1_amd64.snap : 29 Mar 2017, devmode, locally built vm
 
+4 Apr 2017
+==========
+
+The problem with classic confinement is that the 32 bit loader isn't configured correctly.
+
+Can either use a wrapper script to use ld-linux.so.2, or compile with --dynamic-linker option
+
 
 29 Mar 2017
 ===========

@@ -47,13 +47,13 @@ The output will be a file named pharo_(version)_amd64.snap.
 The package is installed with:
 
 ```bash
-sudo snap install --dangerous --devmode pharo_(version)_amd64.snap
+sudo snap install --dangerous --classic pharo_(version)_amd64.snap
 ```
 
 Note:
 
 * --dangerous is required since the package isn't signed.
-* --devmode is required since the package needs access to your working directory.  (It should be possible to install this in strict mode, but it isn't working yet)
+* --classic is required to allow Pharo to access any other program on your machine, i.e. when calling a subprocess.
 
 ## Running the VM
 
@@ -77,4 +77,4 @@ sudo pharo.config
 
 This command only needs to be run once, and you must log out and 
 back in for the changes to take effect.
- 
+

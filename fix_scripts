@@ -1,11 +1,18 @@
 #!/bin/sh
+set -e
 
 sed -i '/run the VM/i \
-export LD_LIBRARY_PATH="\$SNAP/lib/i386-linux-gnu:\$SNAP/usr/lib/i386-linux-gnu:$SNAP/usr/bin/pharo-vm:\$LD_LIBRARY_PATH" \
-export PATH="$PATH:/usr/local/bin"' \
+export HOSTFS=$SNAP \
+export LD_LIBRARY_PATH="$HOSTFS/usr/lib/i386-linux-gnu/libfakeroot:$HOSTFS/usr/local/lib:$HOSTFS/lib/i386-linux-gnu:$HOSTFS/usr/lib/i386-linux-gnu:$HOSTFS/usr/lib/i386-linux-gnu/mesa-egl:$HOSTFS/usr/lib/i386-linux-gnu/mesa:$HOSTFS/lib32:$HOSTFS/usr/lib32:$LD_LIBRARY_PATH" \
+export PATH="$HOSTFS/usr/local/sbin:$HOSTFS/usr/local/bin:$HOSTFS/usr/sbin:$HOSTFS/usr/bin:$HOSTFS/sbin:$HOSTFS/bin:$PATH" \
+' \
 		pharo
 sed -i '/run the VM/i \
-export LD_LIBRARY_PATH="\$SNAP/lib/i386-linux-gnu:\$SNAP/usr/lib/i386-linux-gnu:$SNAP/usr/bin/pharo-vm:\$LD_LIBRARY_PATH" \
-export PATH="$PATH:/usr/local/bin"' \
+export HOSTFS=$SNAP \
+export LD_LIBRARY_PATH="$HOSTFS/usr/lib/i386-linux-gnu/libfakeroot:$HOSTFS/usr/local/lib:$HOSTFS/lib/i386-linux-gnu:$HOSTFS/usr/lib/i386-linux-gnu:$HOSTFS/usr/lib/i386-linux-gnu/mesa-egl:$HOSTFS/usr/lib/i386-linux-gnu/mesa:$HOSTFS/lib32:$HOSTFS/usr/lib32:$LD_LIBRARY_PATH" \
+export PATH="$HOSTFS/usr/local/sbin:$HOSTFS/usr/local/bin:$HOSTFS/usr/sbin:$HOSTFS/usr/bin:$HOSTFS/sbin:$HOSTFS/bin:$PATH" \
+' \
 		pharo-ui
+#sed -i 's|^"$DIR"|$SNAP/lib/ld-linux.so.2 "$DIR"|g' pharo
+#sed -i 's|^"$DIR"|$SNAP/lib/ld-linux.so.2 "$DIR"|g' pharo-ui
 sed -i 's/sudo //g' CONFIG
