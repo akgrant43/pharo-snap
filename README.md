@@ -78,3 +78,20 @@ sudo pharo.config
 This command only needs to be run once, and you must log out and 
 back in for the changes to take effect.
 
+A simple sequence to get started and check your image version:
+
+```bash
+# Create an empty directory to start in
+cd ~
+mkdir pharo6
+cd pharo6
+# Take a copy of a clean image
+# You'll have two files after this: Pharo.image and Pharo.changes
+pharo.cleanvm
+# Start pharo
+pharo.ui Pharo.image
+#
+# You can see the image version by clicking anywhere on the background
+# and selecting System -> About...
+#
+```
