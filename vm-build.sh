@@ -5,6 +5,10 @@ echo "Get sources..."
 git clone --depth 1 --branch Issue19890 https://github.com/akgrant43/pharo-vm.git 
 wget http://files.pharo.org/sources/PharoV50.sources.zip
 unzip PharoV50.sources.zip
+wget http://files.pharo.org/image/60/latest.zip
+unzip latest.zip
+mv Pharo-6*.image Pharo.image
+mv Pharo-6*.changes Pharo.changes
 echo "Set up version info..."
 cd pharo-vm
 ../genVersion.sh
@@ -25,8 +29,6 @@ echo "Starting Build..."
 # Patch the ELF to point to the correct location
 #
 cd $AKGBUILDDIR
-pwd
-ls -lh
 export PHAROVM=`find ./pharo-vm/opensmalltalk-vm/products/phcogspurlinuxht/lib/pharo -name pharo -type f`
 patchelf --set-interpreter /snap/pharo/current/lib/ld-linux.so.2 $PHAROVM
 echo "Patched ELF..."

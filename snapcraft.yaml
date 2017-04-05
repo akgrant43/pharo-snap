@@ -28,22 +28,16 @@ confinement: classic
 apps:
   pharo:
     command: bin/desktop-launch $SNAP/usr/bin/pharo
-    plugs: [home, unity7, opengl, network, x11]
   ui:
     command: bin/desktop-launch $SNAP/usr/bin/pharo-ui
-    plugs: [home, unity7, opengl, network, x11]
   sqlite3:
     command: usr/bin/sqlite3
-    plugs: [home]
   cleanvm:
     command: usr/bin/cleanvm
-    plugs: [home]
   getvm:
     command: usr/bin/getvm
-    plugs: [home]
   config:
     command: usr/bin/CONFIG
-    plugs: [home]
 
 
 parts:
