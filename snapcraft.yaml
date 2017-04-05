@@ -52,27 +52,49 @@ parts:
     source: https://github.com/snapcore/snapd-xdg-open.git
     source-type: git
     build-packages:
-      - libglib2.0-dev
-      - cmake
-      - openssh-server
-      - libtool
-      - automake
-      - autoconf
-      - build-essential
       - ack-grep
-      - zip
+      - autoconf
+      - automake
       - bash-completion
-      - ruby
-      - xz-utils
+      - build-essential
+      - cmake
       - debhelper
       - devscripts
-      - gcc-multilib
       - g++
-      - uuid-dev:i386
+      - gcc-multilib
+      - git
+      - libasound2-dev
+      - libasound2-dev:i386
+      - libasound2:i386
+      - libasound2-plugins:i386
+      - libc6-dev:i386
+      - libfreetype6-dev
+      - libfreetype6-dev:i386
+      - libgl1-mesa-dev
+      - libgl1-mesa-dev:i386
+      - libgl1-mesa-glx:i386
+      - libglapi-mesa:i386
+      - libglib2.0-dev
+      - libice-dev:i386
+      - libsm-dev:i386
+      - libssh2-1-dev
       - libssl1.0.0:i386
+      - libssl-dev
       - libssl-dev:i386
+      - libtool
+      - libx11-dev
+      - libx11-dev:i386
+      - libxext-dev
+      - libxext-dev:i386
+      - locales-all
+      - openssh-server
       - patchelf
+      - ruby
       - unzip
+      - uuid-dev
+      - uuid-dev:i386
+      - xz-utils
+      - zip
     stage-packages:
       - gcc-multilib
       - libc-bin:i386
