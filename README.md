@@ -61,8 +61,8 @@ The snap package provides the following commands:
 
 * pharo - Run the image in headless mode
 * pharo.ui - Run the image (with UI)
-* pharo.cleanvm - Copy the clean Pharo image and changes file to the working directory, i.e. the version current when this package was built.
-* pharo.getvm - copies the latest 6.0 VM from http://get.pharo.org
+* pharo.cleanimage - Copy the clean Pharo image and changes file to the working directory, i.e. the version current when this package was built.
+* pharo.getimage - copies the latest 6.0 VM from http://get.pharo.org
 * pharo.sqlite3 - Run the sqlite3 command line utility
 * pharo.config - configures system thread priority, see below.
 
@@ -87,7 +87,7 @@ mkdir pharo6
 cd pharo6
 # Take a copy of a clean image
 # You'll have two files after this: Pharo.image and Pharo.changes
-pharo.cleanvm
+pharo.cleanimage
 # Start pharo
 pharo.ui Pharo.image
 #

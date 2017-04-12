@@ -1,5 +1,5 @@
 name: pharo
-version: 1.3.0
+version: 1.3.1
 summary: Pharo 6 Smalltalk
 description: |
     This package contains the 6.0 threaded VM and image.
@@ -7,8 +7,8 @@ description: |
     Available commands:
         pharo runs the vm in headless mode.
         pharo.ui runs the vm with display.
-        pharo.cleanvm copies the image and changes file to the working directory.
-        pharo.getvm copies the latest 6.0 VM from http://get.pharo.org
+        pharo.cleanimage copies the image and changes file to the working directory.
+        pharo.getimage copies the latest 6.0 VM from http://get.pharo.org
         pharo.sqlite3 runs the sqlite3 command line utility.
         pharo.config configures system thread priority, see below.
     System Configuration:
@@ -32,10 +32,10 @@ apps:
     command: bin/desktop-launch $SNAP/usr/bin/pharo-ui
   sqlite3:
     command: usr/bin/sqlite3
-  cleanvm:
-    command: usr/bin/cleanvm
-  getvm:
-    command: usr/bin/getvm
+  cleanimage:
+    command: usr/bin/cleanimage
+  getimage:
+    command: usr/bin/getimage
   config:
     command: usr/bin/CONFIG
 
