@@ -1,8 +1,8 @@
 name: pharo
-version: 1.3.1
+version: 2.0.2-dev
 summary: Pharo 6 Smalltalk
 description: |
-    This package contains the 6.0 threaded VM and image.
+    This package contains the 6.0 32 & 64 bit threaded VMs and images.
     
     Available commands:
         pharo runs the vm in headless mode.
@@ -11,6 +11,8 @@ description: |
         pharo.getimage copies the latest 6.0 VM from http://get.pharo.org
         pharo.sqlite3 runs the sqlite3 command line utility.
         pharo.config configures system thread priority, see below.
+        pharo.cleanimage32 and pharo.getimage32 are the 
+            32 bit equivalents of the commands listed above.
     System Configuration:
         This Pharo VM uses a threaded heartbeat that requires elevated priority.
         Permission is granted by creating /etc/security/limits.d/pharo.conf
@@ -27,15 +29,19 @@ confinement: classic
 
 apps:
   pharo:
-    command: bin/desktop-launch $SNAP/usr/bin/pharo
+    command: bin/desktop-launch $SNAP/usr/bin/pharo --nodisplay
   ui:
-    command: bin/desktop-launch $SNAP/usr/bin/pharo-ui
+    command: bin/desktop-launch $SNAP/usr/bin/pharo
   sqlite3:
     command: usr/bin/sqlite3
   cleanimage:
     command: usr/bin/cleanimage
   getimage:
     command: usr/bin/getimage
+  cleanimage32:
+    command: usr/bin/cleanimage32
+  getimage32:
+    command: usr/bin/getimage32
   config:
     command: usr/bin/CONFIG
 
@@ -77,7 +83,6 @@ parts:
       - libglib2.0-dev
       - libice-dev:i386
       - libsm-dev:i386
-      - libssh2-1-dev
       - libssl1.0.0:i386
       - libssl-dev
       - libssl-dev:i386
@@ -87,7 +92,6 @@ parts:
       - libxext-dev
       - libxext-dev:i386
       - locales-all
-      - openssh-server
       - patchelf
       - ruby
       - unzip
@@ -118,6 +122,7 @@ parts:
       - libglapi-mesa:i386
       - uuid-dev:i386
       - sqlite3
+      - libsqlite3-dev
       - libsqlite3-dev:i386
       - git
       - vim

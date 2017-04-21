@@ -1,0 +1,12 @@
+#!/bin/bash
+set -e
+
+# Some of the files are installed as part of the 64 bit VM.
+# Just add the remaining files
+mkdir -p $1/usr/bin/pharo-vm32
+cp -a pharo-vm/opensmalltalk-vm/products/phcogspurlinuxht/lib/pharo/5.0-*/* $1/usr/bin/pharo-vm32/
+cp -a cleanimage32 $1/usr/bin/
+cp -a getimage32 $1/usr/bin/
+mkdir -p $1/var/Pharo/image32
+cp -a image32/Pharo.image image32/Pharo.changes $1/var/Pharo/image32/
+

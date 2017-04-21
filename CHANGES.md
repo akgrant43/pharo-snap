@@ -5,13 +5,27 @@ Note: This change log only documents changes to the packaging.
 For changes to Pharo, please see the Pharo change logs:
 https://github.com/pharo-project/pharo-changelogs
 
+## 2.0.2
+
+- Refactor and improve image size detection
+
+## 2.0.1
+
+- Automatically distinguish between 32 and 64 bit images.
+- Allow sources to be downloaded prior to snapcraft build
+  Saves bandwidth and allows manually selecting the git checkout.
+
+## 2.0.0
+
+- Add 64bit VM to the snap package
+
 ## 1.3.1
 
-Rename getvm and cleanvm to getimage and cleanimage.
+- Rename getvm and cleanvm to getimage and cleanimage.
 
 ## 1.3.0
 
-Successfully running with classic confinement.
+- Successfully running with classic confinement.
 
 ## 1.2.3
 

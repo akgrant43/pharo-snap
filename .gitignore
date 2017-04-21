@@ -2,4 +2,10 @@ build.log
 parts
 prime
 stage
+pharo-vm
+image32
+image64
+*.sources
+*.sources.zip
 *.snap
+*.swp

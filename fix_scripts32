@@ -1,0 +1,18 @@
+#!/bin/sh
+set -e
+
+sed -i '/run the VM/i \
+export HOSTFS=$SNAP \
+export LD_LIBRARY_PATH="$HOSTFS/usr/lib/i386-linux-gnu/libfakeroot:$HOSTFS/usr/local/lib:$HOSTFS/lib/i386-linux-gnu:$HOSTFS/usr/lib/i386-linux-gnu:$HOSTFS/usr/lib/i386-linux-gnu/mesa-egl:$HOSTFS/usr/lib/i386-linux-gnu/mesa:$HOSTFS/lib32:$HOSTFS/usr/lib32:$LD_LIBRARY_PATH" \
+export PATH="$HOSTFS/usr/local/sbin:$HOSTFS/usr/local/bin:$HOSTFS/usr/sbin:$HOSTFS/usr/bin:$HOSTFS/sbin:$HOSTFS/bin:$PATH" \
+' \
+		scripts32/pharo
+sed -i 's/pharo-vm/pharo-vm32/g' scripts32/pharo
+sed -i '/run the VM/i \
+export HOSTFS=$SNAP \
+export LD_LIBRARY_PATH="$HOSTFS/usr/lib/i386-linux-gnu/libfakeroot:$HOSTFS/usr/local/lib:$HOSTFS/lib/i386-linux-gnu:$HOSTFS/usr/lib/i386-linux-gnu:$HOSTFS/usr/lib/i386-linux-gnu/mesa-egl:$HOSTFS/usr/lib/i386-linux-gnu/mesa:$HOSTFS/lib32:$HOSTFS/usr/lib32:$LD_LIBRARY_PATH" \
+export PATH="$HOSTFS/usr/local/sbin:$HOSTFS/usr/local/bin:$HOSTFS/usr/sbin:$HOSTFS/usr/bin:$HOSTFS/sbin:$HOSTFS/bin:$PATH" \
+' \
+		scripts32/pharo-ui
+sed -i 's/pharo-vm/pharo-vm32/g' scripts32/pharo-ui
+sed -i 's/sudo //g' CONFIG
