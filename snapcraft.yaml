@@ -1,5 +1,5 @@
 name: pharo
-version: 2.0.2-dev
+version: 2.0.3
 summary: Pharo 6 Smalltalk
 description: |
     This package contains the 6.0 32 & 64 bit threaded VMs and images.

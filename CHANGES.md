@@ -5,6 +5,11 @@ Note: This change log only documents changes to the packaging.
 For changes to Pharo, please see the Pharo change logs:
 https://github.com/pharo-project/pharo-changelogs
 
+## 2.0.3
+
+- Add FileAttributesPlugin
+- 64 bit VM is unstable
+
 ## 2.0.2
 
 - Refactor and improve image size detection

@@ -20,10 +20,11 @@ fi
 if [ ! -d pharo-vm ]
 then
     echo "Get vm sources..."
-    git clone https://github.com/pharo-project/pharo-vm.git
+    git clone https://github.com/akgrant43/pharo-vm.git
+    #git clone https://github.com/pharo-project/pharo-vm.git
     #git clone https://github.com/OpenSmalltalk/opensmalltalk-vm.git
     #pushd pharo-vm
-    #git checkout 6876bb52b4c8da241551e06e1ad1908b0c18a605
+    #git checkout 1c38b03
     #popd
     echo "Set up version info..."
     pushd pharo-vm
