@@ -33,7 +33,8 @@ Ensure that snapcraft is installed and i386 is enabled:
 
 ```bash
 $ sudo apt install snapcraft build-essential git
-$ dpkg --add-architecture i386
+$ sudo dpkg --add-architecture i386
+$ sudo apt-get update
 ```
 
 More detailed instructions are available from: https://snapcraft.io/create/
@@ -68,8 +69,10 @@ The snap package provides the following commands:
 
 * pharo - Run the image in headless mode
 * pharo.ui - Run the image (with UI)
-* pharo.cleanimage - Copy the clean Pharo image and changes file to the working directory, i.e. the version current when this package was built.
-* pharo.getimage - copies the latest 6.0 VM from http://get.pharo.org
+* pharo.cleanimage - Copy the clean Pharo 64 bit image and changes file to the working directory, i.e. the version current when this package was built.
+* pharo.cleanimage32 - Copy the clean Pharo 32 bit image and changes file to the working directory, i.e. the version current when this package was built.
+* pharo.getimage - copies the latest 64 bit 6.0 VM from http://get.pharo.org
+* pharo.getimage32 - copies the latest 32 bit 6.0 VM from http://get.pharo.org
 * pharo.sqlite3 - Run the sqlite3 command line utility
 * pharo.config - configures system thread priority, see below.
 
