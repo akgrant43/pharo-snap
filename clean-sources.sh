@@ -4,17 +4,11 @@ set -e
 # Remove all the source files required to build the Pharo VMs.
 #
 
-echo "Remvoe all sources..."
+echo "Remove all sources..."
 if [ -d pharo-vm ]
 then
     echo "Remove vm sources..."
     rm -r pharo-vm
-fi
-
-if [ -f PharoV50.sources ]
-then
-    echo "Remove PharoV50.sources..."
-    rm PharoV50.sources PharoV50.sources.zip
 fi
 
 if [ -d image32 ]

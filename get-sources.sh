@@ -15,17 +15,29 @@ then
     echo "Get PharoV50.sources..."
     wget --no-verbose http://files.pharo.org/sources/PharoV50.sources.zip
     unzip PharoV50.sources.zip
+    rm PharoV50.sources.zip
+fi
+
+if [ ! -f PharoV60.sources ]
+then
+    echo "Get PharoV50.sources..."
+    wget --no-verbose http://files.pharo.org/get-files/60/sources.zip
+    unzip sources.zip
+    rm sources.zip
 fi
 
 if [ ! -d pharo-vm ]
 then
     echo "Get vm sources..."
-    git clone https://github.com/akgrant43/pharo-vm.git
+    #git clone https://github.com/akgrant43/pharo-vm.git
     #git clone https://github.com/pharo-project/pharo-vm.git
-    #git clone https://github.com/OpenSmalltalk/opensmalltalk-vm.git
-    #pushd pharo-vm
-    #git checkout 1c38b03
-    #popd
+    mkdir pharo-vm
+    pushd pharo-vm
+    git clone https://github.com/OpenSmalltalk/opensmalltalk-vm.git
+    popd
+    pushd pharo-vm/opensmalltalk-vm
+    git checkout ac699a55da4670bbd0c41bfe4f06b639b51298ac
+    popd
     echo "Set up version info..."
     pushd pharo-vm
     ../genVersion.sh
@@ -33,6 +45,7 @@ then
     echo "Add PharoV50.sources..."
     mkdir pharo-vm/sources
     cp PharoV50.sources pharo-vm/sources/
+    cp PharoV60.sources pharo-vm/sources/
 fi
 
 if [ ! -d image32 ]
