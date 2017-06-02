@@ -20,23 +20,25 @@ fi
 
 if [ ! -f PharoV60.sources ]
 then
-    echo "Get PharoV50.sources..."
+    echo "Get PharoV60.sources..."
     wget --no-verbose http://files.pharo.org/get-files/60/sources.zip
     unzip sources.zip
     rm sources.zip
 fi
 
-if [ ! -d pharo-vm ]
+if [ ! -d pharo-vm/opensmalltalk-vm ]
 then
     echo "Get vm sources..."
-    #git clone https://github.com/akgrant43/pharo-vm.git
-    #git clone https://github.com/pharo-project/pharo-vm.git
-    mkdir pharo-vm
+    if [ ! -d pharo-vm ]
+    then
+        mkdir pharo-vm
+    fi
     pushd pharo-vm
     git clone https://github.com/OpenSmalltalk/opensmalltalk-vm.git
+    #git clone git@github.com:akgrant43/opensmalltalk-vm.git
     popd
     pushd pharo-vm/opensmalltalk-vm
-    git checkout ac699a55da4670bbd0c41bfe4f06b639b51298ac
+    git checkout Cog
     popd
     echo "Set up version info..."
     pushd pharo-vm

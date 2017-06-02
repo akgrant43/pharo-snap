@@ -1,0 +1,4 @@
+#!/bin/sh
+set -e
+
+sed -i 's/sudo //g' scripts/CONFIG
