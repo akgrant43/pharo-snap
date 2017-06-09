@@ -1,5 +1,5 @@
 name: pharo
-version: 6.0.0.0
+version: 6.0.0.1-d3
 version-script: |
     if [ "$SNAPCRAFT_GRADE" = "stable" ]
     then
