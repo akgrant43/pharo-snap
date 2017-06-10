@@ -35,14 +35,13 @@ then
     fi
     pushd pharo-vm
     git clone https://github.com/OpenSmalltalk/opensmalltalk-vm.git
-    #git clone git@github.com:akgrant43/opensmalltalk-vm.git
     popd
     pushd pharo-vm/opensmalltalk-vm
-    git checkout Cog
+    git checkout 6a63f68
     popd
     echo "Set up version info..."
-    pushd pharo-vm
-    ../genVersion.sh
+    pushd pharo-vm/opensmalltalk-vm
+    scripts/updateSCCSVersions
     popd
     echo "Add PharoV50.sources..."
     mkdir pharo-vm/sources

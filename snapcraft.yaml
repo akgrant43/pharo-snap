@@ -1,11 +1,11 @@
 name: pharo
-version: 6.0.0.1-d3
+version: 6.0.0.2
 version-script: |
     if [ "$SNAPCRAFT_GRADE" = "stable" ]
     then
         echo $SNAPCRAFT_PROJECT_VERSION
     else
-        echo $SNAPCRAFT_PROJECT_VERSION-$(scripts/dev_version.sh)
+        echo $SNAPCRAFT_PROJECT_VERSION-$(build_scripts/dev_version.sh)
     fi
 summary: Pharo 6 Smalltalk
 description: |

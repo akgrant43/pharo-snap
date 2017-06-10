@@ -5,6 +5,17 @@ Note: This change log only documents changes to the packaging.
 For changes to Pharo, please see the Pharo change logs:
 https://github.com/pharo-project/pharo-changelogs
 
+## 6.0.2
+
+- Move to Pharo6 GA VM (6a63f68)
+- 64 bit VM not yet tested
+
+## 6.0.0
+
+- Rearrange directory structure
+- Add snapcraft version-script
+- Use gcc 4.8 (OSProcess doesn't work with gcc 5.4)
+
 ## 2.0.3
 
 - Add FileAttributesPlugin
