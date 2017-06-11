@@ -10,14 +10,16 @@ These notes assume that you are already familiar with Pharo.  If not, please vis
 
 Install Pharo in seconds on [Ubuntu and other snap supported Linux distributions](https://snapcraft.io/docs/core/install) with:
 
-    snap install pharo --classic --beta
+```
+sudo snap install pharo --classic --beta
+```
 
 Installing a snap is very quick. They are isolated with all of their dependencies. Snaps also auto update when a new version is released.
 
 Opening URL's in a browser on the host requires snapd-xdg-open to be installed on the host.  On Ubuntu based systems:
 
 ```bash
-$ sudo apt-get install snapd-xdg-open
+sudo apt-get install snapd-xdg-open
 ```
 
 ## Compatibility
@@ -76,9 +78,9 @@ These instructions are for Ubuntu 16.04 and should work on later versions.
 Ensure that snapcraft is installed and i386 is enabled:
 
 ```bash
-$ sudo apt install snapcraft build-essential git
-$ sudo dpkg --add-architecture i386
-$ sudo apt-get update
+sudo apt install snapcraft build-essential git
+sudo dpkg --add-architecture i386
+sudo apt-get update
 ```
 
 More detailed instructions are available from: https://snapcraft.io/create/
@@ -88,7 +90,7 @@ Clone this repository and cd to the root directory (snapcraft.yaml is in this di
 Build the package:
 
 ```bash
-$ snapcraft clean; snapcraft
+snapcraft clean && snapcraft
 ```
 
 The output will be a file named pharo_(version)_amd64.snap.
