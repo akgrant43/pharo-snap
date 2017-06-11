@@ -10,7 +10,7 @@ These notes assume that you are already familiar with Pharo.  If not, please vis
 
 Install Pharo in seconds on [Ubuntu and other snap supported Linux distributions](https://snapcraft.io/docs/core/install) with:
 
-    snap install pharo --classic --edge
+    snap install pharo --classic --beta
 
 Installing a snap is very quick. They are isolated with all of their dependencies. Snaps also auto update when a new version is released.
 
