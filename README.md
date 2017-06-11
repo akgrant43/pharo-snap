@@ -25,44 +25,6 @@ $ sudo apt-get install snapd-xdg-open
 Pharo image 60442 or later is required for Cairo support.
 
 
-## Building the package
-
-These instructions are for Ubuntu 16.04 and should work on later versions.
-
-Ensure that snapcraft is installed and i386 is enabled:
-
-```bash
-$ sudo apt install snapcraft build-essential git
-$ sudo dpkg --add-architecture i386
-$ sudo apt-get update
-```
-
-More detailed instructions are available from: https://snapcraft.io/create/
-
-Clone this repository and cd to the root directory (snapcraft.yaml is in this directory).
-
-Build the package:
-
-```bash
-$ snapcraft clean; snapcraft
-```
-
-The output will be a file named pharo_(version)_amd64.snap.
-
-
-## Install the package
-
-The package is installed with:
-
-```bash
-sudo snap install --dangerous --classic pharo_(version)_amd64.snap
-```
-
-Note:
-
-* --dangerous is required since the package isn't signed.
-* --classic is required to allow Pharo to access any other program on your machine, i.e. when calling a subprocess.
-
 ## Running the VM
 
 The snap package provides the following commands:
@@ -105,3 +67,44 @@ pharo.ui Pharo.image
 # and selecting System -> About...
 #
 ```
+
+
+## Building the package
+
+These instructions are for Ubuntu 16.04 and should work on later versions.
+
+Ensure that snapcraft is installed and i386 is enabled:
+
+```bash
+$ sudo apt install snapcraft build-essential git
+$ sudo dpkg --add-architecture i386
+$ sudo apt-get update
+```
+
+More detailed instructions are available from: https://snapcraft.io/create/
+
+Clone this repository and cd to the root directory (snapcraft.yaml is in this directory).
+
+Build the package:
+
+```bash
+$ snapcraft clean; snapcraft
+```
+
+The output will be a file named pharo_(version)_amd64.snap.
+
+
+## Install the package
+
+The package is installed with:
+
+```bash
+sudo snap install --dangerous --classic pharo_(version)_amd64.snap
+```
+
+Note:
+
+* --dangerous is required since the package isn't signed.
+* --classic is required to allow Pharo to access any other program on your machine, i.e. when calling a subprocess.
+
+

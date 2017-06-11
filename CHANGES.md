@@ -10,6 +10,11 @@ https://github.com/pharo-project/pharo-changelogs
 - Move to Pharo6 GA VM (6a63f68)
 - 64 bit VM not yet tested
 
+## 6.0.1
+
+- Add FileAttributesPlugin source to snapcraft build
+-- This is temporary until the plugin is either integrated in to the base system, or discarded.
+
 ## 6.0.0
 
 - Rearrange directory structure

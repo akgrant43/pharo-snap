@@ -9,7 +9,7 @@ apt-get update
 # Build tools
 echo "Install tools..."
 apt-get install -y cmake openssh-client openssh-server libtool automake autoconf git vim build-essential ack-grep zip bash-completion ruby xz-utils debhelper devscripts gcc-multilib g++ libext-dev
-apt-get install -y libasound2-dev libssl-dev libfreetype6-dev libx11-dev libxext-dev gcc-multilib uuid-dev libssh2-1-dev libgl1-mesa-dev
+apt-get install -y libasound2-dev libssl-dev libfreetype6-dev libx11-dev libxext-dev gcc-multilib uuid-dev libssh2-1-dev libgl1-mesa-dev libpulse-dev:i386 libglib2.0-dev:i386
 
 # Runtime packages
 echo "Install runtime packages..."
