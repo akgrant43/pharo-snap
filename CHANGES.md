@@ -5,17 +5,29 @@ Note: This change log only documents changes to the packaging.
 For changes to Pharo, please see the Pharo change logs:
 https://github.com/pharo-project/pharo-changelogs
 
-## 6.0.2
+## 6.0.0.5
+
+- Patch snap desktop-launch issue that blindly attempts to create symbolic links
+
+## 6.0.0.4
+
+- Build environment tweaking
+
+## 6.0.0.3
+
+- Mark package as stable
+
+## 6.0.0.2
 
 - Move to Pharo6 GA VM (6a63f68)
 - 64 bit VM not yet tested
 
-## 6.0.1
+## 6.0.0.1
 
 - Add FileAttributesPlugin source to snapcraft build
 -- This is temporary until the plugin is either integrated in to the base system, or discarded.
 
-## 6.0.0
+## 6.0.0.0
 
 - Rearrange directory structure
 - Add snapcraft version-script

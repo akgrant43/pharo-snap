@@ -1,0 +1,9 @@
+207,208c207,211
+<   mkdir -p `dirname $dest`
+<   ln -s /home/$USER/$f $dest
+---
+>   if [ ! -L "$dest" ]
+>   then
+>     mkdir -p `dirname $dest`
+>     ln -s /home/$USER/$f $dest
+>   fi
