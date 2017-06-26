@@ -43,6 +43,10 @@ then
     pushd pharo-vm/opensmalltalk-vm
     scripts/updateSCCSVersions
     popd
+fi
+
+if [ ! -d pharo-vm/sources ]
+then
     echo "Add PharoV50.sources..."
     mkdir pharo-vm/sources
     cp PharoV50.sources pharo-vm/sources/
