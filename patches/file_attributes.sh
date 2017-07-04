@@ -23,3 +23,24 @@ sed -i '/AioPlugin/i \
 FileAttributesPlugin \\' \
 	pharo-vm/opensmalltalk-vm/build.linux64x64/pharo.cog.spur/plugins.ext
 fi
+
+cp -ar patches/FileAttributesPlugin pharo-vm/opensmalltalk-vm/platforms/win32/plugins/
+grep -q FileAttributesPlugin pharo-vm/opensmalltalk-vm/build.win32x86/pharo.cog.spur/plugins.ext
+if [ $? -eq 1 ]
+then
+echo "Add win32 plugin"
+sed -i '/EXTERNAL_PLUGINS = \\/a \
+FileAttributesPlugin \\' \
+	pharo-vm/opensmalltalk-vm/build.win32x86/pharo.cog.spur/plugins.ext
+fi
+
+grep -q FileAttributesPlugin pharo-vm/opensmalltalk-vm/build.win64x64/pharo.cog.spur/plugins.ext
+if [ $? -eq 1 ]
+then
+echo "Add win64 plugin"
+sed -i '/EXTERNAL_PLUGINS = \\/a \
+FileAttributesPlugin \\' \
+	pharo-vm/opensmalltalk-vm/build.win64x64/pharo.cog.spur/plugins.ext
+fi
+
+
