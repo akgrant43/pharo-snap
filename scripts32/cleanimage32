@@ -1,5 +1,5 @@
 #!/bin/bash
 # Copy the image and changes file to the users working directory
 
-cp -a $SNAP/var/Pharo/image32/Pharo.* ./
+cp -a $SNAP/var/Pharo/image32/Pharo7.0-* ./
 

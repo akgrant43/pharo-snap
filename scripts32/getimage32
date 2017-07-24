@@ -1,9 +1,7 @@
 #!/bin/bash
-# Download the latest image and changes file to the users working directory
+# Download the latest image, changes and sources files to the users working directory
 
-wget http://files.pharo.org/image/60/latest.zip
+wget http://files.pharo.org/image/70/latest.zip
 unzip latest.zip
-mv Pharo-6*.image Pharo.image
-mv Pharo-6*.changes Pharo.changes
 rm latest.zip
 

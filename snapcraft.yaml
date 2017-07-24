@@ -1,5 +1,5 @@
-name: pharo
-version: 6.0.0.5
+name: pharo7
+version: 7.0.d0001
 version-script: |
     if [ "$SNAPCRAFT_GRADE" = "stable" ]
     then
@@ -7,9 +7,9 @@ version-script: |
     else
         echo $SNAPCRAFT_PROJECT_VERSION-$(build_scripts/dev_version.sh)
     fi
-summary: Pharo 6 Smalltalk
+summary: Pharo 7 Smalltalk
 description: |
-    This package contains the 6.0 32 & 64 bit threaded VMs and images.
+    This package contains the 7.0 32 & 64 bit threaded VMs and images.
     
     Available commands:
         pharo runs the vm in headless mode.
@@ -31,11 +31,11 @@ description: |
     Web Site:
         The Pharo web site: http://pharo.org/
         Snapcraft package source: https://github.com/akgrant43/pharo-snap
-grade: stable
+grade: devel
 confinement: classic
 
 apps:
-  pharo:
+  pharo7:
     command: bin/desktop-launch $SNAP/usr/bin/pharo --nodisplay
   ui:
     command: bin/desktop-launch $SNAP/usr/bin/pharo
