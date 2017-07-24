@@ -37,7 +37,7 @@ then
     git clone https://github.com/OpenSmalltalk/opensmalltalk-vm.git
     popd
     pushd pharo-vm/opensmalltalk-vm
-    git checkout 6a63f68
+    git checkout 6a2c4f4
     popd
     echo "Set up version info..."
     pushd pharo-vm/opensmalltalk-vm

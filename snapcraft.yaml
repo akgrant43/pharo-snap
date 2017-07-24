@@ -1,5 +1,7 @@
 name: pharo
-version: 6.0.0.5
+grade: stable
+confinement: classic
+version: 6.1.0.0
 version-script: |
     if [ "$SNAPCRAFT_GRADE" = "stable" ]
     then
@@ -31,8 +33,6 @@ description: |
     Web Site:
         The Pharo web site: http://pharo.org/
         Snapcraft package source: https://github.com/akgrant43/pharo-snap
-grade: stable
-confinement: classic
 
 apps:
   pharo:
