@@ -7,6 +7,11 @@ set -e
 # during multiple builds, or as part of the snapcraft command to ensure
 # latest sources are always used
 #
+# Common URLs for downloading ZeroConf versions:
+#
+#   V70 VM: http://get.pharo.org/vm70
+#           http://files.pharo.org/get-files/70/
+#
 
 echo "Get all sources..."
 
@@ -29,7 +34,7 @@ then
     git clone https://github.com/OpenSmalltalk/opensmalltalk-vm.git
     popd
     pushd pharo-vm/opensmalltalk-vm
-    git checkout 31670ee
+    git checkout 6a2c4f4
     popd
     echo "Set up version info..."
     pushd pharo-vm/opensmalltalk-vm
