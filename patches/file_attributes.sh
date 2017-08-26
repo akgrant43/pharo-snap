@@ -5,7 +5,7 @@
 #
 
 echo "Update FileAttributesPlugin source"
-cp -ar patches/FileAttributesPlugin pharo-vm/opensmalltalk-vm/platforms/unix/plugins/
+cp -ar patches/FileAttributesPlugin pharo-vm/opensmalltalk-vm/platforms/Cross/plugins/
 grep -q FileAttributesPlugin pharo-vm/opensmalltalk-vm/build.linux32x86/pharo.cog.spur/plugins.ext
 if [ $? -eq 1 ]
 then
@@ -24,7 +24,6 @@ FileAttributesPlugin \\' \
 	pharo-vm/opensmalltalk-vm/build.linux64x64/pharo.cog.spur/plugins.ext
 fi
 
-cp -ar patches/FileAttributesPlugin pharo-vm/opensmalltalk-vm/platforms/win32/plugins/
 grep -q FileAttributesPlugin pharo-vm/opensmalltalk-vm/build.win32x86/pharo.cog.spur/plugins.ext
 if [ $? -eq 1 ]
 then
