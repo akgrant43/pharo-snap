@@ -6,6 +6,7 @@ SQLite3 libraries are included.
 
 These notes assume that you are already familiar with Pharo.  If not, please visit the website at http://pharo.org/
 
+
 ## Installing Pharo
 
 Install Pharo in seconds on [Ubuntu and other snap supported Linux distributions](https://snapcraft.io/docs/core/install) with:
@@ -16,11 +17,6 @@ sudo snap install pharo --classic --beta
 
 Installing a snap is very quick. They are isolated with all of their dependencies. Snaps also auto update when a new version is released.
 
-Opening URL's in a browser on the host requires snapd-xdg-open to be installed on the host.  On Ubuntu based systems:
-
-```bash
-sudo apt-get install snapd-xdg-open
-```
 
 ## Compatibility
 
