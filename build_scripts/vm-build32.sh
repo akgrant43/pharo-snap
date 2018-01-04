@@ -14,7 +14,8 @@ echo "Starting Build..."
 #
 cd $AKGBUILDDIR
 export PHAROVM=`find ./pharo-vm/opensmalltalk-vm/products/phcogspurlinuxht/lib/pharo -name pharo -type f`
-patchelf --set-interpreter /snap/pharo/current/lib/ld-linux.so.2 $PHAROVM
+#patchelf --set-interpreter /snap/pharo/current/lib/ld-linux.so.2 $PHAROVM
+patchelf --set-interpreter /snap/core/current/lib/i386-linux-gnu/ld-linux.so.2 $PHAROVM
 echo "Patched ELF..."
 ls -lh $PHAROVM
 strings $PHAROVM | grep ld-linux
