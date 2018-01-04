@@ -1,5 +1,5 @@
 name: pharo7
-version: 7.0.d0002
+version: 7.0.d0004
 grade: devel
 confinement: classic
 version-script: |
